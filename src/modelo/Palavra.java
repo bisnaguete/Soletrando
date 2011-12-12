@@ -15,8 +15,13 @@ class Palavra {
     private String frase;
     private String pathSom;
     private Tocador tocador;
+    private String sinonimo;
 
-    public Palavra(String pathSom){
+    public Palavra(String grafia, String significado, String frase, String sinonimo, String pathSom){
+        this.frase = frase;
+        this.grafia = grafia;
+        this.sinonimo = sinonimo;
+        this.significado = significado;
         this.pathSom = pathSom;
         tocador = new Tocador(pathSom);
     }
@@ -36,9 +41,16 @@ class Palavra {
         return significado;
     }
 
-   public void TocarAudio(){
+   public void tocarAudio(){
       tocador.start();
    }
-    
+
+    public String getSinonimo() {
+        return sinonimo;
+    }
+
+    public void setSinonimo(String sinonimo) {
+        this.sinonimo = sinonimo;
+    }
     
 }

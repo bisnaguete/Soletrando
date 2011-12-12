@@ -13,29 +13,35 @@ import java.util.logging.Logger;
  * @author Bisnaguete
  */
 public class Contador extends Thread {
-    
+
     private AtorJogador controle;
     private boolean interromper;
     private int tempo;
-    
+
     public Contador(AtorJogador controle) {
         this.controle = controle;
-        tempo = 0;
     }
-    
+
     public void run() {
-        while(!interromper) {
-            if(tempo<60) {
-                controle.atualizarContador(tempo);
-                tempo++;
-            } else {
-                controle.confirmaPalavra();
-            }
+        interromper = false;
+        tempo = 60;
+        while (!interromper) {
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Contador.class.getName()).log(Level.SEVERE, null, ex);
             }
+            if (tempo > 0) {
+                tempo--;
+                controle.atualizarContador(tempo);
+            } else {
+                controle.confirmaPalavra();
+                interromper = true;
+            }
         }
+    }
+    
+    public void interromper() {
+        interromper = true;
     }
 }

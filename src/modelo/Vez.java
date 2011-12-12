@@ -16,14 +16,14 @@ public class Vez {
     private boolean palavraConfirmada;
     
     public Vez(Palavra palavra) {
-        contadorAudio = 0;
+        contadorAudio = 3;
         palavraDigitada = "";
         this.palavra = palavra;
         palavraConfirmada = false;
     }
     
     public boolean podeOuvir() {
-        return contadorAudio < 3;
+        return contadorAudio > 0;
     }
     
     public Palavra getPalavra() {
@@ -38,7 +38,7 @@ public class Vez {
         return palavraDigitada.charAt(palavraDigitada.length()-1);
     }
     
-    public boolean verificarGrafia() {
+    public boolean verificaGrafia() {
         return palavraDigitada.equalsIgnoreCase(palavra.getGrafia());
     }
     
@@ -48,5 +48,29 @@ public class Vez {
     
     public void setPalavraConfirmada(boolean valor) {
         this.palavraConfirmada = valor;
+    }
+
+    public void setPalavra(Palavra palavra){
+        this.palavra = palavra;
+    }
+
+    public void ouvirPalavra() {
+        palavra.tocarAudio();
+    }
+
+    public void decrementarPodeOuvir() {
+        contadorAudio--;
+    }
+
+    public String getSinonimo() {
+        return palavra.getSinonimo();
+    }
+
+    String getSignificado() {
+        return palavra.getSignificado();
+    }
+
+    String getFrase() {
+        return palavra.getFrase();
     }
 }

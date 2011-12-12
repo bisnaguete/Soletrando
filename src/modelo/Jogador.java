@@ -15,7 +15,7 @@ public class Jogador {
     private boolean primeiroDaRodada;
     private boolean acertou;
 
-    public boolean isAcertou() {
+    public boolean getAcertou() {
         return acertou;
     }
 
@@ -23,7 +23,7 @@ public class Jogador {
         this.acertou = acertou;
     }
 
-    public boolean isDaVez() {
+    public boolean getDaVez() {
         return daVez;
     }
 

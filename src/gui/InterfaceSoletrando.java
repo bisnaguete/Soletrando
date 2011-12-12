@@ -11,6 +11,7 @@
 package gui;
 
 import controle.AtorJogador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,7 @@ import controle.AtorJogador;
 public class InterfaceSoletrando extends javax.swing.JFrame {
 
     private AtorJogador jogador;
-    
+
     /** Creates new form InterfaceSoletrando */
     public InterfaceSoletrando(AtorJogador jogador) {
         this.jogador = jogador;
@@ -35,23 +36,478 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lbJogadorAdversario = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lbNivel = new javax.swing.JLabel();
+        lbRodada = new javax.swing.JLabel();
+        lbTempoRestante = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        tfPalavraDigitada = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        tfPalavraOponente = new javax.swing.JTextField();
+        btConfirmar = new javax.swing.JButton();
+        btDesistir = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btOuvir = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        lbSinonimo = new javax.swing.JLabel();
+        lbSignificado = new javax.swing.JLabel();
+        lbAplicacao = new javax.swing.JLabel();
+        lbReproducoesDisponiveis = new javax.swing.JLabel();
+        btConectar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Form"); // NOI18N
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(InterfaceSoletrando.class);
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setName("jLabel2"); // NOI18N
+
+        lbJogadorAdversario.setText(resourceMap.getString("lbJogadorAdversario.text")); // NOI18N
+        lbJogadorAdversario.setName("lbJogadorAdversario"); // NOI18N
+
+        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
+        jLabel4.setName("jLabel4"); // NOI18N
+
+        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
+        jLabel6.setName("jLabel6"); // NOI18N
+
+        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
+        jLabel7.setName("jLabel7"); // NOI18N
+
+        lbNivel.setText(resourceMap.getString("lbNivel.text")); // NOI18N
+        lbNivel.setName("lbNivel"); // NOI18N
+
+        lbRodada.setText(resourceMap.getString("lbRodada.text")); // NOI18N
+        lbRodada.setName("lbRodada"); // NOI18N
+
+        lbTempoRestante.setText(resourceMap.getString("lbTempoRestante.text")); // NOI18N
+        lbTempoRestante.setName("lbTempoRestante"); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(lbJogadorAdversario))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTempoRestante)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lbRodada)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbNivel)
+                            .addGap(68, 68, 68))))
+                .addGap(62, 62, 62))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(27, 27, 27)
+                .addComponent(lbJogadorAdversario)
+                .addGap(83, 83, 83)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(lbNivel))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lbRodada))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lbTempoRestante))
+                .addContainerGap(157, Short.MAX_VALUE))
+        );
+
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setName("jPanel2"); // NOI18N
+
+        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
+        jLabel10.setName("jLabel10"); // NOI18N
+
+        tfPalavraDigitada.setText(resourceMap.getString("tfPalavraDigitada.text")); // NOI18N
+        tfPalavraDigitada.setEnabled(false);
+        tfPalavraDigitada.setName("tfPalavraDigitada"); // NOI18N
+        tfPalavraDigitada.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfPalavraDigitadaKeyReleased(evt);
+            }
+        });
+
+        jLabel11.setText(resourceMap.getString("jLabel11.text")); // NOI18N
+        jLabel11.setName("jLabel11"); // NOI18N
+
+        tfPalavraOponente.setEditable(false);
+        tfPalavraOponente.setText(resourceMap.getString("tfPalavraOponente.text")); // NOI18N
+        tfPalavraOponente.setName("tfPalavraOponente"); // NOI18N
+
+        btConfirmar.setText(resourceMap.getString("btConfirmar.text")); // NOI18N
+        btConfirmar.setEnabled(false);
+        btConfirmar.setName("btConfirmar"); // NOI18N
+        btConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConfirmarActionPerformed(evt);
+            }
+        });
+
+        btDesistir.setText(resourceMap.getString("btDesistir.text")); // NOI18N
+        btDesistir.setEnabled(false);
+        btDesistir.setName("btDesistir"); // NOI18N
+        btDesistir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDesistirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfPalavraDigitada, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(tfPalavraOponente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btConfirmar))
+                    .addComponent(btDesistir))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfPalavraDigitada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConfirmar))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfPalavraOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btDesistir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setName("jPanel3"); // NOI18N
+
+        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
+        jLabel1.setName("jLabel1"); // NOI18N
+
+        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
+        jLabel3.setName("jLabel3"); // NOI18N
+
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        btOuvir.setText(resourceMap.getString("btOuvir.text")); // NOI18N
+        btOuvir.setEnabled(false);
+        btOuvir.setName("btOuvir"); // NOI18N
+        btOuvir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOuvirActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+
+        lbSinonimo.setText(resourceMap.getString("lbSinonimo.text")); // NOI18N
+        lbSinonimo.setName("lbSinonimo"); // NOI18N
+
+        lbSignificado.setText(resourceMap.getString("lbSignificado.text")); // NOI18N
+        lbSignificado.setName("lbSignificado"); // NOI18N
+
+        lbAplicacao.setText(resourceMap.getString("lbAplicacao.text")); // NOI18N
+        lbAplicacao.setName("lbAplicacao"); // NOI18N
+
+        lbReproducoesDisponiveis.setName("lbReproducoesDisponiveis"); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbSinonimo, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btOuvir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbSignificado, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(16, 16, 16)
+                        .addComponent(lbAplicacao, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                    .addComponent(lbReproducoesDisponiveis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lbSinonimo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lbSignificado))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lbAplicacao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btOuvir)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbReproducoesDisponiveis, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9))
+        );
+
+        btOuvir.getAccessibleContext().setAccessibleName(resourceMap.getString("btOuvir.AccessibleContext.accessibleName")); // NOI18N
+
+        btConectar.setText(resourceMap.getString("btConectar.text")); // NOI18N
+        btConectar.setName("btConectar"); // NOI18N
+        btConectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConectarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 679, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btConectar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(btConectar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btOuvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOuvirActionPerformed
+        ouvirPalavra();
+}//GEN-LAST:event_btOuvirActionPerformed
+
+    private void btDesistirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDesistirActionPerformed
+        desistir();
+}//GEN-LAST:event_btDesistirActionPerformed
+
+    private void btConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectarActionPerformed
+        this.conectar();
+    }//GEN-LAST:event_btConectarActionPerformed
+
+private void tfPalavraDigitadaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPalavraDigitadaKeyReleased
+    digitarLetra();
+}//GEN-LAST:event_tfPalavraDigitadaKeyReleased
+
+private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
+    confirmarPalavra();
+}//GEN-LAST:event_btConfirmarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btConectar;
+    private javax.swing.JButton btConfirmar;
+    private javax.swing.JButton btDesistir;
+    private javax.swing.JButton btOuvir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbAplicacao;
+    private javax.swing.JLabel lbJogadorAdversario;
+    private javax.swing.JLabel lbNivel;
+    private javax.swing.JLabel lbReproducoesDisponiveis;
+    private javax.swing.JLabel lbRodada;
+    private javax.swing.JLabel lbSignificado;
+    private javax.swing.JLabel lbSinonimo;
+    private javax.swing.JLabel lbTempoRestante;
+    private javax.swing.JTextField tfPalavraDigitada;
+    private javax.swing.JTextField tfPalavraOponente;
     // End of variables declaration//GEN-END:variables
+
+    public void conectar() {
+        jogador.conectar();
+    }
+
+    public String obterUsuario() {
+        return JOptionPane.showInputDialog("Digite seu nome");
+    }
+
+    public String obterServidor() {
+        return JOptionPane.showInputDialog("Digite o servidor para conexão");
+    }
+
+    public void notificar(String msg) {
+        JOptionPane.showMessageDialog(this, msg);
+    }
+
+    public void iniciarInterfaceJogador(String sinonimo, String significado, String frase) {
+        btOuvir.setEnabled(true);
+        btConfirmar.setEnabled(true);
+        btDesistir.setEnabled(false);
+        tfPalavraDigitada.setEnabled(true);
+        limparTela();
+        setarDicasPalavra(sinonimo, significado, frase);
+    }
+
+    public void iniciarInterfaceEspera() {
+        btOuvir.setEnabled(false);
+        btConfirmar.setEnabled(false);
+        btDesistir.setEnabled(true);
+        limparTela();
+    }
+
+    public void desabilitarConectar() {
+        btConectar.setEnabled(false);
+    }
+
+    public void atualizarContador(int tempo) {
+        lbTempoRestante.setText(String.valueOf(tempo));
+    }
+
+    private void finalizarJogo() {
+        jogador.finalizarJogo();
+    }
+
+    public void desabilitarControles() {
+        btConectar.setEnabled(true);
+        btOuvir.setEnabled(false);
+        btConfirmar.setEnabled(false);
+        btDesistir.setEnabled(false);
+    }
+
+    public void limparTela() {
+        lbSinonimo.setText("");
+        lbSignificado.setText("");
+        lbAplicacao.setText("");
+        lbTempoRestante.setText("");
+        lbReproducoesDisponiveis.setText("");
+        tfPalavraDigitada.setText("");
+        tfPalavraOponente.setText("");
+    }
+
+    public void habilitarDesistir() {
+        btDesistir.setEnabled(true);
+    }
+
+    private void ouvirPalavra() {
+        jogador.ouvirPalavra();
+    }
+
+    private void digitarLetra() {
+        char letra = getUltimaLetra();
+        jogador.digitarLetra(letra);
+    }
+
+    private char getUltimaLetra() {
+        return tfPalavraDigitada.getText().charAt(tfPalavraDigitada.getText().length()-1);
+    }
+
+    private void confirmarPalavra() {
+        jogador.confirmaPalavra();
+    }
+
+    private void desistir() {
+        jogador.desistir();
+    }
+
+    public void addCaractereOponente(char caractere) {
+        tfPalavraOponente.setText(tfPalavraOponente.getText()+caractere);
+    }
+
+    private void setarDicasPalavra(String sinonimo, String significado, String frase) {
+        lbSinonimo.setText(sinonimo);
+        lbSignificado.setText(significado);
+        lbAplicacao.setText(frase);
+    }
+
+    public void setNomeAdversario(String nome) {
+        lbJogadorAdversario.setText(nome);
+    }
 }
