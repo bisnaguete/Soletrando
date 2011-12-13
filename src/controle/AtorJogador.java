@@ -27,15 +27,13 @@ public class AtorJogador {
 
     public boolean conectar() {
         boolean exito = false;
-        if (!partida.getConectado()) {
-            String idUsuario = janela.obterUsuario();
-            String servidor = janela.obterServidor();
+        String idUsuario = janela.obterUsuario();
+        String servidor = janela.obterServidor();
 
-            exito = netGames.conectar(servidor, idUsuario);
+        exito = netGames.conectar(servidor, idUsuario);
 
-            if (exito) {
-                partida.setConectado(true);
-            }
+        if (exito) {
+            partida.setConectado(true);
             netGames.solicitarInicio();
         }
         if (exito) {
@@ -62,8 +60,8 @@ public class AtorJogador {
         } else {
             janela.notificar("Você errou a palavra!");
         }
-        boolean primeiro = partida.isPrimeiroDaRodada();
         partida.setAcerteiPalavra(acertou);
+        boolean primeiro = partida.isPrimeiroDaRodada();
         if (!primeiro) {
             partida.verificaVencedor();
         }
@@ -106,12 +104,11 @@ public class AtorJogador {
         partida.setNome(nome);
         if (posicao == 1) {
             nome = netGames.obterNomeAdversario(2);
-            janela.setNomeAdversario(nome);
         } else {
             nome = netGames.obterNomeAdversario(1);
-            janela.setNomeAdversario(nome);
         }
         partida.setNomeAdversario(nome);
+        janela.setNomeAdversario(nome);
         if (posicao == 1) {
             partida.setContadorRodada(-1);
             iniciarVez();
@@ -130,16 +127,15 @@ public class AtorJogador {
         String sinonimo = partida.getSinonimo();
         String significado = partida.getSignificado();
         String frase = partida.getFrase();
-        janela.iniciarInterfaceJogador(sinonimo, significado, frase);
-        janela.setNivelAtual(partida.getNivelAtual());
-        janela.setRodadaAtual(partida.getRodadaAtual());
-        janela.setQuantVezesOuvir("3");
+        String nivelAtual = partida.getNivelAtual();
+        String rodadaAtual = partida.getRodadaAtual();
+        janela.iniciarInterfaceJogador(sinonimo, significado, frase, nivelAtual, rodadaAtual);
     }
 
     public void finalizarJogo() {
-        boolean exito = netGames.desconectar();
-        if (exito) {
-            partida.setConectado(false);
+        desconectar();
+        boolean conectado = partida.getConectado();
+        if (!conectado) {
             janela.desabilitarControles();
             janela.limparTela();
         } else {
@@ -200,5 +196,12 @@ public class AtorJogador {
         janela.notificar("Oponente desistiu!");
         contador.interromper();
         finalizarJogo();
+    }
+    
+    public void desconectar() {
+        boolean exito = netGames.desconectar();
+        if(exito) {
+            partida.setConectado(false);
+        }
     }
 }

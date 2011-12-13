@@ -29,12 +29,12 @@ public class Partida {
     }
 
     public boolean ouvirPalavra() {
-        if(vez.podeOuvir()) {
+        boolean podeOuvir = vez.podeOuvir();
+        if(podeOuvir) {
             vez.ouvirPalavra();
             vez.decrementarPodeOuvir();
-            return true;
         }
-        return false;
+        return podeOuvir;
     }
     
     public void adicionarLetra(char letra) {

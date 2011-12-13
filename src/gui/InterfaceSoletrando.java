@@ -466,13 +466,11 @@ private void tfPalavraDigitadaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIR
         taNotificacao.setText(taNotificacao.getText()+"\n"+msg);
     }
 
-    public void iniciarInterfaceJogador(String sinonimo, String significado, String frase) {
-        btOuvir.setEnabled(true);
-        btConfirmar.setEnabled(true);
-        btDesistir.setEnabled(false);
-        tfPalavraDigitada.setEnabled(true);
+    public void iniciarInterfaceJogador(String sinonimo, String significado, String frase, String nivelAtual, String rodadaAtual) {
+        habilitarBotoesJogador();
         limparTela();
         setarDicasPalavra(sinonimo, significado, frase);
+        setarInformacoes(nivelAtual, rodadaAtual);
     }
 
     public void iniciarInterfaceEspera() {
@@ -560,5 +558,18 @@ private void tfPalavraDigitadaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIR
 
     public void setRodadaAtual(String rodadaAtual) {
         lbRodada.setText(rodadaAtual);
+    }
+
+    private void habilitarBotoesJogador() {
+        btOuvir.setEnabled(true);
+        btConfirmar.setEnabled(true);
+        btDesistir.setEnabled(false);
+        tfPalavraDigitada.setEnabled(true);
+    }
+
+    private void setarInformacoes(String nivelAtual, String rodadaAtual) {
+        lbNivel.setText(nivelAtual);
+        lbRodada.setText(rodadaAtual);
+        lbReproducoesDisponiveis.setText("3");
     }
 }
