@@ -23,7 +23,6 @@ class Palavra {
         this.sinonimo = sinonimo;
         this.significado = significado;
         this.pathSom = pathSom;
-        tocador = new Tocador(pathSom);
     }
     public String getGrafia() {
         return grafia;
@@ -42,6 +41,7 @@ class Palavra {
     }
 
    public void tocarAudio(){
+      tocador = new Tocador(pathSom);
       tocador.start();
    }
 

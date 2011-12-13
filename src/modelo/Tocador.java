@@ -4,42 +4,32 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 public class Tocador extends Thread {
 
+    private File mp3;
     private Player player;
 
     public Tocador(String path) {
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream(new File(path));
-            BufferedInputStream bis = new BufferedInputStream(fis);
-            this.player = new Player(bis);
-        } catch (JavaLayerException ex) {
-            Logger.getLogger(Tocador.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Tocador.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fis.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Tocador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        this.mp3 = new File(path);
     }
 
-    @Override
     public void run() {
+        this.play();
+    }
+
+    public void play() {
         try {
+            FileInputStream fis = new FileInputStream(mp3);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            this.player = new Player(bis);
+            System.out.println("Tocando!");
             this.player.play();
-        } catch (JavaLayerException ex) {
-            Logger.getLogger(Tocador.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Terminado!");
+        } catch (Exception e) {
+            System.out.println("Problema ao tocar " + mp3);
+            e.printStackTrace();
         }
     }
 }

@@ -25,6 +25,7 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
     public InterfaceSoletrando(AtorJogador jogador) {
         this.jogador = jogador;
         initComponents();
+        tfPalavraDigitada.getDocument().addDocumentListener(new PalavraDigitadaListener(this));
     }
 
     /** This method is called from within the constructor to
@@ -45,6 +46,9 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
         lbNivel = new javax.swing.JLabel();
         lbRodada = new javax.swing.JLabel();
         lbTempoRestante = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        taNotificacao = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -75,6 +79,8 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
+        lbJogadorAdversario.setFont(resourceMap.getFont("lbJogadorAdversario.font")); // NOI18N
+        lbJogadorAdversario.setForeground(resourceMap.getColor("lbJogadorAdversario.foreground")); // NOI18N
         lbJogadorAdversario.setText(resourceMap.getString("lbJogadorAdversario.text")); // NOI18N
         lbJogadorAdversario.setName("lbJogadorAdversario"); // NOI18N
 
@@ -96,6 +102,16 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
         lbTempoRestante.setText(resourceMap.getString("lbTempoRestante.text")); // NOI18N
         lbTempoRestante.setName("lbTempoRestante"); // NOI18N
 
+        jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
+        jLabel12.setName("jLabel12"); // NOI18N
+
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        taNotificacao.setColumns(20);
+        taNotificacao.setRows(5);
+        taNotificacao.setName("taNotificacao"); // NOI18N
+        jScrollPane1.setViewportView(taNotificacao);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,18 +122,12 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(lbJogadorAdversario))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel7)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbTempoRestante)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -125,16 +135,31 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(lbNivel)
                             .addGap(68, 68, 68))))
-                .addGap(62, 62, 62))
+                .addGap(105, 105, 105))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addContainerGap(283, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addContainerGap(256, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbJogadorAdversario, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(27, 27, 27)
-                .addComponent(lbJogadorAdversario)
-                .addGap(83, 83, 83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbJogadorAdversario, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lbNivel))
@@ -146,7 +171,11 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(lbTempoRestante))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
@@ -162,6 +191,9 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
         tfPalavraDigitada.setEnabled(false);
         tfPalavraDigitada.setName("tfPalavraDigitada"); // NOI18N
         tfPalavraDigitada.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfPalavraDigitadaKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfPalavraDigitadaKeyReleased(evt);
             }
@@ -369,16 +401,20 @@ public class InterfaceSoletrando extends javax.swing.JFrame {
 }//GEN-LAST:event_btDesistirActionPerformed
 
     private void btConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectarActionPerformed
-        this.conectar();
+        conectar();
     }//GEN-LAST:event_btConectarActionPerformed
 
 private void tfPalavraDigitadaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPalavraDigitadaKeyReleased
-    digitarLetra();
+
 }//GEN-LAST:event_tfPalavraDigitadaKeyReleased
 
 private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
     confirmarPalavra();
 }//GEN-LAST:event_btConfirmarActionPerformed
+
+private void tfPalavraDigitadaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPalavraDigitadaKeyPressed
+
+}//GEN-LAST:event_tfPalavraDigitadaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConectar;
@@ -388,6 +424,7 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -399,6 +436,7 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbAplicacao;
     private javax.swing.JLabel lbJogadorAdversario;
     private javax.swing.JLabel lbNivel;
@@ -407,6 +445,7 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JLabel lbSignificado;
     private javax.swing.JLabel lbSinonimo;
     private javax.swing.JLabel lbTempoRestante;
+    private javax.swing.JTextArea taNotificacao;
     private javax.swing.JTextField tfPalavraDigitada;
     private javax.swing.JTextField tfPalavraOponente;
     // End of variables declaration//GEN-END:variables
@@ -424,7 +463,7 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     public void notificar(String msg) {
-        JOptionPane.showMessageDialog(this, msg);
+        taNotificacao.setText(taNotificacao.getText()+"\n"+msg);
     }
 
     public void iniciarInterfaceJogador(String sinonimo, String significado, String frase) {
@@ -449,10 +488,6 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
     public void atualizarContador(int tempo) {
         lbTempoRestante.setText(String.valueOf(tempo));
-    }
-
-    private void finalizarJogo() {
-        jogador.finalizarJogo();
     }
 
     public void desabilitarControles() {
@@ -480,17 +515,17 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         jogador.ouvirPalavra();
     }
 
-    private void digitarLetra() {
+    public void digitarLetra() {
         char letra = getUltimaLetra();
         jogador.digitarLetra(letra);
     }
 
     private char getUltimaLetra() {
-        return tfPalavraDigitada.getText().charAt(tfPalavraDigitada.getText().length()-1);
+        return tfPalavraDigitada.getText().charAt(tfPalavraDigitada.getText().length() - 1);
     }
 
     private void confirmarPalavra() {
-        jogador.confirmaPalavra();
+        jogador.confirmarPalavra();
     }
 
     private void desistir() {
@@ -498,7 +533,7 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     public void addCaractereOponente(char caractere) {
-        tfPalavraOponente.setText(tfPalavraOponente.getText()+caractere);
+        tfPalavraOponente.setText(tfPalavraOponente.getText() + caractere);
     }
 
     private void setarDicasPalavra(String sinonimo, String significado, String frase) {
@@ -509,5 +544,21 @@ private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
     public void setNomeAdversario(String nome) {
         lbJogadorAdversario.setText(nome);
+    }
+
+    public void setQuantVezesOuvir(String string) {
+        lbReproducoesDisponiveis.setText(string);
+    }
+    
+    public void decrementaQuantVezesOuvir() {
+        lbReproducoesDisponiveis.setText(String.valueOf(Integer.parseInt(lbReproducoesDisponiveis.getText())-1));
+    }
+
+    public void setNivelAtual(String nivelAtual) {
+        lbNivel.setText(nivelAtual);
+    }
+
+    public void setRodadaAtual(String rodadaAtual) {
+        lbRodada.setText(rodadaAtual);
     }
 }

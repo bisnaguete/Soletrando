@@ -159,5 +159,20 @@ public class Partida {
     public String getFrase() {
         return vez.getFrase();
     }
+
+    public void setAcertouOponente(boolean acertou) {
+        jogadorOponente.setAcertou(acertou);
+    }
+
+    public void setAcerteiPalavra(boolean acertou) {
+        jogadorEu.setAcertou(acertou);
+    }
     
+    public String getNivelAtual() {
+        return String.valueOf(nivelAtual.getNivel());
+    }
+    
+    public String getRodadaAtual() {
+        return String.valueOf(contadorRodada);
+    }
 }

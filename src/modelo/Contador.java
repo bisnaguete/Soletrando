@@ -35,8 +35,8 @@ public class Contador extends Thread {
                 tempo--;
                 controle.atualizarContador(tempo);
             } else {
-                controle.confirmaPalavra();
-                interromper = true;
+                controle.confirmarPalavra();
+                interromper();
             }
         }
     }
